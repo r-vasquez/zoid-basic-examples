@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zoid/9.0.63/zoid.min.js"></script>
+    <script src="./zoidComponent.js"></script>
+    <title>Child iframe</title>
+</head>
+<body>
+    <input type="text" id="message-box">
+    <button id="button-console">Open Console</button>
+</body>
+<script>
+    if (window.xprops.messageToDisplay) {
+        document.querySelector('#message-box').value = window.xprops.messageToDisplay;
+    }
+
+    document.querySelector('#button-console').addEventListener('click', () => {
+        window.xprops.onClickHandler()
+    })
+</script>
+</html>
